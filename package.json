@@ -1,6 +1,6 @@
 {
-  "name": "KakVariant",
-  "version": "1.2.0",
+  "name": "just_gulp",
+  "version": "1.2.1",
   "description": "Just doing a simple sites",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,5 @@
     "gulp-uglify": "^3.0.2",
     "map-stream": "0.0.7",
     "sass": "^1.51.0"
-  },
-  "dependencies": {}
+  }
 }

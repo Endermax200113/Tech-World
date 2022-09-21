@@ -27,42 +27,42 @@ $(document).ready(function() {
 	});
 });
 
-function testFunction(num) {
-	if (num !== undefined) alert("Функция успешно работает! Номер проверки -> " + num);
+function tstFun(num) {
+	if (num !== undefined) alert("Функция успешно работает! Проверка -> " + num);
 	else alert("Функция успешно работает!");
 }
 
-function testConsole(num) {
-	if (num !== undefined) console.log("Функция успешно работает! Номер проверки -> " + num);
+function tstCon(num) {
+	if (num !== undefined) console.log("Функция успешно работает! Проверка -> " + num);
 	else console.log("Функция успешно работает!");
 }
 
 /*
-	Полный пример: [ https://kakvariant.ru/descServ.php?isTrue=true&val=0#test ]
+	Полный пример: [ https://example.ru/exampleFile.php?var=value&bool=false#test ]
 
-	URL      -- Полная ссылка на текущий сайта [ https://kakvariant.ru/descServ.php?isTrue=true&val=0#test ]
+	URL      -- Полная ссылка на текущий сайта [ https://example.ru/exampleFile.php?var=value&bool=false#test ]
 	Protocol -- Протокол сайта [ https: ]
-	Host     -- Имя сайта [ kakvaruant.ru ]
-	Path     -- Путь к странице [ /descServ.php ]
-	Values   -- Значения из URL [ ?isTrue=true&val=0 ]
+	Host     -- Имя сайта [ example.ru ]
+	Path     -- Путь к странице [ /exampleFile.php ]
+	Values   -- Значения из URL [ ?var=value&bool=false ]
 	Hash     -- ID элемента, с помощью которого перемещается страница либо вверх, либо вниз [ #test ]
 */
 
-function getURL() {return location.href;}
+function getURLFull() {return location.href;}
 function getURLProtocol() {return location.protocol;}
 function getURLHost() {return location.host;}
 function getURLPath() {return location.pathname;}
 function getURLValues() {return location.search;}
 function getURLHash() {return location.hash;}
 
-function isURL(url) {return location.href == url;}
-function isURLProtocol(pr) {return location.protocol == pr;}
-function isURLHost(host) {return location.host == host;}
-function isURLPath(path) {return location.pathname == path;}
-function isURLValues(vals) {return location.search == vals;}
-function isURLHash(hash) {return location.hash == hash;}
+function isURLFull(url) {return location.href === url;}
+function isURLProtocol(pr) {return location.protocol === pr;}
+function isURLHost(host) {return location.host === host;}
+function isURLPath(path) {return location.pathname === path;}
+function isURLValues(vals) {return location.search === vals;}
+function isURLHash(hash) {return location.hash === hash;}
 
-function setURL(url) {location.href = url;}
+function setURLFull(url) {location.href = url;}
 function setURLProtocol(pr) {location.protocol = pr;}
 function setURLHost(host) {location.host = host;}
 function setURLPath(path) {location.pathname = path;}
@@ -71,8 +71,6 @@ function setURLHash(hash) {location.hash = hash;}
 
 
 //Главный скрипт
-var copyrite = "© КакВариант 2020-" + new Date().getFullYear();
-
 $(document).ready(() => {
-	console.log(copyrite);
+	//Код во время запуска
 });
