@@ -1,7 +1,7 @@
 const fs = require('fs'),
 	chalk = require('chalk');
 
-let srcFonts = 'src/sass/_local-fonts.sass',
+let srcFonts = 'src/scss/_local-fonts.scss',
 	appFonts = 'build/fonts/';
 
 module.exports = function fonts(done) {
@@ -23,7 +23,7 @@ module.exports = function fonts(done) {
 						console.log(chalk `
 {bold {bgGray Добавлен новый шрифт: ${fontname}.}}
 ----------------------------------------------------------------------------------
-{bgYellow.black Пожалуйста, переместите вызов @mixin из {cyan src/sass/_local-fonts.sass} в {cyan src/sass/_fonts.sass}, после чего измените его.}
+{bgYellow.black Пожалуйста, переместите вызов @mixin из {cyan src/scss/_local-fonts.scss} в {cyan src/scss/_fonts.scss}, после чего измените его.}
 ----------------------------------------------------------------------------------
 `);
 					}
