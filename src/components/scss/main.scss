@@ -895,3 +895,240 @@ html {
 		}
 	}
 }
+
+.team {
+	position: relative;
+	height: 548px;
+
+	html.theme-1 &, html.theme-3 & {
+		background-color: #FAFAFF;
+	}
+
+	html.theme-2 & {
+		background-color: $black;
+	}
+
+	html.theme-4 & {
+		background-color: $purple;
+	}
+
+	html.theme-5 & {
+		background-color: #D8CFCB;
+	}
+
+	&__things {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__thing {
+		position: absolute;
+
+		&_object {
+			top: 42px;
+			left: 637px;
+			height: 41px;
+
+			html.theme-1 &, html.theme-2 &, html.theme-3 &, html.theme-5 & {
+				fill: #2F4BDF;
+			}
+
+			html.theme-4 & {
+				fill: $white;
+			}
+		}
+
+		&_square {
+			&-1 {
+				top: 112px;
+				left: 519px;
+				width: 540px;
+				height: 400px;
+				background-image: url('/img/sprite.svg#square-1-team');
+				background-repeat: no-repeat;
+			}
+
+			&-2 {
+				top: 64px;
+				left: 1011px;
+				height: 83px;
+
+				html.theme-1 &, html.theme-2 &, html.theme-3 &, html.theme-5 & { 
+					fill: $soft-pink;
+				}
+
+				html.theme-4 & {
+					fill: $dark-purple;
+				}
+			}
+		}
+
+		&_circle {
+			border-radius: 50%;
+
+			&-1 {
+				left: 878px;
+				top: 160px;
+				width: 286px;
+				height: 286px;
+				background-color: #683CB8;
+			}
+
+			&-2 {
+				left: 1169px;
+				top: 188px;
+				width: 20px;
+				height: 20px;
+				background-color: $light-blue;
+			}
+
+			&-3 {
+				left: 1110px;
+				top: 482px;
+				width: 12px;
+				height: 12px;
+				background-color: #FFED90;
+			}
+
+			&-4 {
+				left: 852px;
+				top: 233px;
+				width: 15px;
+				height: 15px;
+				background-color: $light-blue;
+			}
+		}
+	}
+
+	&__wrapper {
+		width: 1349px;
+		height: 100%;
+	}
+
+	&__container {
+		width: 1070px;
+		height: 100%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__information {
+		flex-basis: 515px;
+		margin-left: 4px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		z-index: 1;
+	}
+
+	&__title {
+		margin-top: 13px;
+		font-family: 'Lato';
+		font-weight: 700;
+		font-size: 29.6px;
+		letter-spacing: -0.2px;
+
+		html.theme-1 &, html.theme-3 &, html.theme-5 & {
+			color: $dark-gray;
+		}
+
+		html.theme-2 & {
+			color: $white-title;
+		}
+
+		html.theme-4 & {
+			color: $white;
+		}
+	}
+
+	&__line {
+		width: 54px;
+		height: 3px;
+		margin: 21px 0 0;
+		border: 0;
+		border-radius: 3px;
+
+		html.theme-1 &, html.theme-2 &, html.theme-3 & {
+			background-color: $pink;
+		}
+
+		html.theme-4 & {
+			background-color: $dark-purple;
+		}
+
+		html.theme-5 & {
+			background-color: $light-beige;
+		}
+	}
+
+	&__desc {
+		margin-top: 15px;
+		font-family: 'Lato';
+		font-weight: 400;
+		font-size: 14.34px;
+		line-height: 30px;
+
+		html.theme-1 &, html.theme-3 &, html.theme-5 & {
+			color: $gray;
+		}
+
+		html.theme-2 & {
+			color: $white-desc;
+		}
+
+		html.theme-4 & {
+			color: $white;
+		}
+	}
+
+	&__btn {
+		width: 176px;
+		height: 46px;
+		margin-top: 22px;
+		border: 0;
+		outline: 0;
+		border-radius: 24px;
+		font-family: 'Lato';
+		font-weight: 500;
+		font-size: 19px;
+		cursor: pointer;
+
+		html.theme-1 & {
+			background-color: #FF90B5;
+			color: #2C2B2B;
+			box-shadow: 0px 10px 15px rgba(240, 58, 118, 0.18);
+		}
+
+		html.theme-2 &, html.theme-3 & {
+			background-color: $pink;
+			color: $white;
+			box-shadow: 0px 10px 15px rgba(240, 58, 118, 0.18);
+		}
+
+		html.theme-4 & {
+			background-color: $purple;
+			color: $white;
+			box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.3), 10px 10px 20px #3F3C89;
+		}
+
+		html.theme-5 & {
+			background-color: $light-beige;
+			color: $dark-beige;
+			box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.3), 10px 10px 20px #8D8786;
+		}
+	}
+
+	&__image {
+		flex-basis: 445px;
+		height: 100%;
+		z-index: 1;
+
+		&_laptop {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+}
