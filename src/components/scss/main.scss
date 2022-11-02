@@ -66,44 +66,56 @@ html {
 		font-family: 'Lato';
 		font-size: 24.4px;
 		letter-spacing: -0.5px;
-		flex-basis: 370px;
+		flex-basis: 365px;
 		font-weight: 900;
 
 		&_link {
 			text-decoration: none;
-		}
+			transition: text-shadow .3s ease, color .3s ease;
 
-		html.theme-1 &_link {
-			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-		}
+			html.theme-1 & {
+				text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			}
 
-		html.theme-1 &_link, html.theme-2 &_link, html.theme-3 &_link {
-			color: $pink;
-		}
+			html.theme-1 &, html.theme-2 &, html.theme-3 & {
+				color: $pink;
+			}
 
-		html.theme-4 &_link {
-			color: $white;
-		}
+			html.theme-4 & {
+				color: $white;
+			}
 
-		html.theme-5 &_link {
-			color: $black;
+			html.theme-5 & {
+				color: $black;
+			}
 		}
 	}
 
 	&__theme {
+		height: 100%;
+		position: relative;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		font-family: 'Lato';
 
 		&_btn-select {
+			background-color: transparent;
+			outline: 0;
+			border: 0;
 			display: flex;
 			align-items: center;
 			font-size: 14.5px;
 			cursor: pointer;
-		}
+			transition: color .3s ease;
 
-		html.theme-2 &_btn-select, html.theme-4 &_btn-select {
-			color: $white;
+			html.theme-1 &, html.theme-3 &, html.theme-5 & {
+				color: $black;
+			}
+
+			html.theme-2 &, html.theme-4 & {
+				color: $white;
+			}
 		}
 
 		&_icon {
@@ -112,14 +124,74 @@ html {
 			height: 12px;
 			fill: none;
 			stroke: $black;
-		}
+			transition: stroke .3s ease, transform .3s ease;
 
-		html.theme-2 &_icon, html.theme-4 &_icon {
-			stroke: white;
+			html.theme-2 &, html.theme-4 & {
+				stroke: white;
+			}
+
+			&.show {
+				transform: rotate(180deg);
+			}
 		}
 
 		&_list {
-			display: none;
+			position: absolute;
+			top: 80px;
+			left: 0;
+			width: 78px;
+			height: 0px;
+			padding: 0;
+			overflow: hidden;
+			box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
+			transition: background-color .3s ease, box-shadow .3s ease, height .3s ease;
+
+			&.show {
+				height: 135px;
+			}
+
+			html.theme-1 & {
+				background-color: #FFFFFF88;
+			}
+
+			html.theme-3 & {
+				background-color: $white;
+			}
+
+			html.theme-2 & {
+				background-color: $black;
+			}
+		
+			html.theme-4 & {
+				background-color: $purple;
+			}
+		
+			html.theme-5 & {
+				background-color: $light-beige;
+			}
+		}
+
+		&_btn {
+			outline: 0;
+			border: 0;
+			border-bottom: 1px solid rgba($black, .3);
+			padding: 0;
+			width: 100%;
+			height: 27px;
+			background-color: transparent;
+			font-family: 'Lato';
+			font-weight: 400;
+			font-size: 9.6px;
+			cursor: pointer;
+			transition: color .3s ease;
+
+			html.theme-1 &, html.theme-3 &, html.theme-5 & {
+				color: $black;
+			}
+
+			html.theme-2 &, html.theme-4 & {
+				color: $white;
+			}
 		}
 	}
 }
@@ -136,9 +208,10 @@ html {
 	height: 770px;
 	mask-image: url('/img/sprite.svg#wrap-performance');
 	mask-size: cover;
+	transition: background-color .3s ease, background-image .3s ease;
 
 	html.theme-1 & {
-		background: linear-gradient(100.73deg, rgba(#BEEEF5, .5) 1.11%, rgba(#BDAAE1, .5) 33.86%, rgba(#27A3D5, .5) 68.61%, rgba(#F79BB9, .5) 97.83%);
+		background-image: linear-gradient(100.73deg, rgba(#BEEEF5, .5) 1.11%, rgba(#BDAAE1, .5) 33.86%, rgba(#27A3D5, .5) 68.61%, rgba(#F79BB9, .5) 97.83%);
 	}
 
 	html.theme-2 & {
@@ -161,6 +234,7 @@ html {
 		position: absolute;
 		width: 100%;
 		height: 770px;
+		transition: fill .3s ease, stroke .3s ease;
 
 		html.theme-1 &, html.theme-2 &, html.theme-5 & {
 			display: none;
@@ -205,17 +279,18 @@ html {
 				left: 76px;
 				width: 37px;
 				height: 37px;
+				transition: background-image .3s ease;
 
 				html.theme-1 &, html.theme-2 &, html.theme-3 & {
-					background: radial-gradient(100% 100% at 31.25% 30.21%, #BEEEF5 0%, #F79BB9 100%);
+					background-image: radial-gradient(100% 100% at 31.25% 30.21%, #BEEEF5 0%, #F79BB9 100%);
 				}
 
 				html.theme-4 & {
-					background: radial-gradient(100% 100% at 31.25% 30.21%, #1BF2A3 0%, #5129A6 100%);
+					background-image: radial-gradient(100% 100% at 31.25% 30.21%, #1BF2A3 0%, #5129A6 100%);
 				}
 
 				html.theme-5 & {
-					background: radial-gradient(100% 100% at 31.25% 30.21%, #F2E5E4 0%, #8C766D 100%);
+					background-image: radial-gradient(100% 100% at 31.25% 30.21%, #F2E5E4 0%, #8C766D 100%);
 				}
 			}
 
@@ -233,17 +308,18 @@ html {
 				height: 110px;
 				top: 639px;
 				left: 680px;
+				transition: background-image .3s ease;
 
 				html.theme-1 &, html.theme-2 &, html.theme-3 & {
-					background: radial-gradient(100% 100% at 31.25% 30.21%, #BEEEF5 0%, #F79BB9 100%);
+					background-image: radial-gradient(100% 100% at 31.25% 30.21%, #BEEEF5 0%, #F79BB9 100%);
 				}
 
 				html.theme-4 & {
-					background: radial-gradient(100% 100% at 31.25% 30.21%, #1BF2A3 0%, #5129A6 100%);
+					background-image: radial-gradient(100% 100% at 31.25% 30.21%, #1BF2A3 0%, #5129A6 100%);
 				}
 
 				html.theme-5 & {
-					background: radial-gradient(100% 100% at 31.25% 30.21%, #D9C5C1 0%, #8C766D 100%);
+					background-image: radial-gradient(100% 100% at 31.25% 30.21%, #D9C5C1 0%, #8C766D 100%);
 				}
 			}
 
@@ -252,6 +328,7 @@ html {
 				height: 25px;
 				top: 413px;
 				left: 1173px;
+				transition: background-color .3s ease, box-shadow .3s ease;
 
 				html.theme-1 &, html.theme-2 &, html.theme-3 & {
 					background-color: $light-blue;
@@ -274,8 +351,9 @@ html {
 				top: 0px;
 				right: 0px;
 				filter: blur(250px);
+				transition: background-color .3s ease;
 
-				html.theme-1 &, html.theme-2 & {
+				html.theme-1 &, html.theme-2 &, html.theme-3 & {
 					background-color: $light-cyan;
 				}
 
@@ -289,17 +367,18 @@ html {
 				height: 38px;
 				top: 163px;
 				left: 1216px;
+				transition: background-image .3s ease;
 
 				html.theme-1 &, html.theme-2 &, html.theme-3 & {
-					background: radial-gradient(100% 100% at 31.25% 30.21%, #BEEEF5 0%, #F79BB9 100%);
+					background-image: radial-gradient(100% 100% at 31.25% 30.21%, #BEEEF5 0%, #F79BB9 100%);
 				}
 
 				html.theme-4 & {
-					background: radial-gradient(100% 100% at 31.25% 30.21%, #1BF2A3 0%, #5129A6 100%)
+					background-image: radial-gradient(100% 100% at 31.25% 30.21%, #1BF2A3 0%, #5129A6 100%)
 				}
 
 				html.theme-5 & {
-					background: radial-gradient(100% 100% at 31.25% 30.21%, #D9C5C1 0%, #8C766D 100%);
+					background-image: radial-gradient(100% 100% at 31.25% 30.21%, #D9C5C1 0%, #8C766D 100%);
 				}
 			}
 		}
@@ -309,6 +388,7 @@ html {
 			height: 34px;
 			top: 484px;
 			left: 61px;
+			transition: fill .3s ease;
 
 			html.theme-1 &, html.theme-2 &, html.theme-3 & {
 				fill: $pink;
@@ -332,6 +412,7 @@ html {
 				top: 124px;
 				left: 306px;
 				filter: blur(2.5px);
+				transition: fill .3s ease;
 
 				html.theme-1 &, html.theme-2 &, html.theme-3 & {
 					fill: $soft-pink;
@@ -351,6 +432,7 @@ html {
 				height: 35px;
 				top: 506px;
 				left: 1293px;
+				transition: fill .3s ease;
 
 				html.theme-1 &, html.theme-2 &, html.theme-3 & {
 					fill: $pink;
@@ -376,6 +458,7 @@ html {
 				top: 470px;
 				left: 411px;
 				border-width: 5px;
+				transition: border-color .3s ease;
 
 				html.theme-1 &, html.theme-2 &, html.theme-3 & {
 					border-color: $pink;
@@ -421,6 +504,7 @@ html {
 		line-height: 60px;
 		margin-top: 40px;
 		text-transform: capitalize;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-3 & {
 			color: $dark-gray;
@@ -439,6 +523,8 @@ html {
 		}
 
 		&_pink {
+			transition: color .3s ease;
+
 			html.theme-1 &, html.theme-2 &, html.theme-3 & {
 				color: $pink;
 			}
@@ -459,6 +545,7 @@ html {
 		font-size: 14px;
 		margin-top: 5px;
 		line-height: 30px;
+		transition: color .3 ease;
 
 		html.theme-1 &, html.theme-3 &, html.theme-5 & {
 			color: #575757;
@@ -484,6 +571,7 @@ html {
 		border-radius: 25px;
 		margin-top: 15px;
 		cursor: pointer;
+		transition: background-color .3s ease, color .3s ease, box-shadow .3s ease;
 
 		html.theme-1 & {
 			background-color: #FF90B5;
@@ -567,6 +655,7 @@ html {
 			font-size: 15px;
 			font-family: 'Lato';
 			font-weight: 600;
+			transition: color .3s ease;
 
 			html.theme-1 &, html.theme-2 &, html.theme-3 & {
 				color: $soft-pink;
@@ -587,6 +676,7 @@ html {
 			font-family: 'Lato';
 			font-weight: 700;
 			letter-spacing: 0.3px;
+			transition: color .3s ease;
 
 			html.theme-1 &, html.theme-2 &, html.theme-3 & {
 				color: $pink;
@@ -661,6 +751,7 @@ html {
 		font-family: 'Lato';
 		font-weight: 700;
 		font-size: 28px;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-3 &, html.theme-5 & {
 			color: $dark-gray;
@@ -681,6 +772,7 @@ html {
 		margin: 26px auto 0;
 		border: none;
 		border-radius: 1.5px;
+		transition: background-color .3s ease;
 
 		html.theme-1 &, html.theme-2 &, html.theme-3 & {
 			background-color: $pink;
@@ -705,6 +797,7 @@ html {
 		margin-top: 18px;
 		line-height: 28px;
 		letter-spacing: 0.07px;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-3 &, html.theme-5 & {
 			color: $gray;
@@ -734,6 +827,7 @@ html {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		transition: background-color .3s ease, box-shadow .3s ease;
 
 		html.theme-1 &, html.theme-3 &, html.theme-5 & {
 			background-color: $white;
@@ -769,6 +863,7 @@ html {
 		font-family: 'Lato';
 		font-size: 19.4px;
 		letter-spacing: .3px;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-3 &, html.theme-5 & {
 			color: $dark-gray;
@@ -791,6 +886,7 @@ html {
 		letter-spacing: 0;
 		width: 250px;
 		line-height: 19px;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-3 &, html.theme-5 & {
 			color: $gray;
@@ -842,6 +938,7 @@ html {
 		font-size: 29.3px;
 		text-transform: capitalize;
 		line-height: 42px;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-3 &, html.theme-5 & {
 			color: $dark-gray;
@@ -862,6 +959,7 @@ html {
 		border: none;
 		border-radius: 3px;
 		margin: 20px 0 0;
+		transition: background-color .3s ease;
 		
 		html.theme-1 &, html.theme-2 &, html.theme-3 & {
 			background-color: $light-blue;
@@ -883,6 +981,7 @@ html {
 		width: 420px;
 		margin-top: 15px;
 		line-height: 30px;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-3 &, html.theme-5 & {
 			color: $gray;
@@ -901,6 +1000,7 @@ html {
 .team {
 	position: relative;
 	height: 548px;
+	transition: background-color .3s ease;
 
 	html.theme-1 &, html.theme-3 & {
 		background-color: #FAFAFF;
@@ -931,6 +1031,7 @@ html {
 			top: 42px;
 			left: 637px;
 			height: 41px;
+			transition: fill .3s ease;
 
 			html.theme-1 &, html.theme-2 &, html.theme-3 &, html.theme-5 & {
 				fill: #2F4BDF;
@@ -955,6 +1056,7 @@ html {
 				top: 64px;
 				left: 1011px;
 				height: 83px;
+				transition: fill .3s ease;
 
 				html.theme-1 &, html.theme-2 &, html.theme-3 &, html.theme-5 & { 
 					fill: $soft-pink;
@@ -1031,6 +1133,7 @@ html {
 		font-weight: 700;
 		font-size: 29.6px;
 		letter-spacing: -0.2px;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-3 &, html.theme-5 & {
 			color: $dark-gray;
@@ -1051,6 +1154,7 @@ html {
 		margin: 21px 0 0;
 		border: 0;
 		border-radius: 3px;
+		transition: background-color .3s ease;
 
 		html.theme-1 &, html.theme-2 &, html.theme-3 & {
 			background-color: $pink;
@@ -1071,6 +1175,7 @@ html {
 		font-weight: 400;
 		font-size: 14.34px;
 		line-height: 30px;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-3 &, html.theme-5 & {
 			color: $gray;
@@ -1096,6 +1201,7 @@ html {
 		font-weight: 500;
 		font-size: 19px;
 		cursor: pointer;
+		transition: background-color .3s ease, color .3s ease, box-shadow .3s ease;
 
 		html.theme-1 & {
 			background-color: #FF90B5;
@@ -1166,6 +1272,7 @@ html {
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
+		transition: background-color .3s ease;
 
 		html.theme-1 &, html.theme-2 &, html.theme-3 &, html.theme-5 & {
 			background-color: $pink;
@@ -1206,6 +1313,7 @@ html {
 		font-weight: 700;
 		font-size: 29.6px;
 		letter-spacing: -0.2px;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-3 &, html.theme-5 & {
 			color: $dark-gray;
@@ -1226,6 +1334,7 @@ html {
 		margin: 20px 0 0;
 		border: 0;
 		border-radius: 3px;
+		transition: background-color .3s ease;
 
 		html.theme-1 &, html.theme-2 &, html.theme-3 &, html.theme-5 & {
 			background-color: #683CB8;
@@ -1242,6 +1351,7 @@ html {
 		font-weight: 400;
 		font-size: 14.33px;
 		line-height: 30px;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-3 &, html.theme-5 & {
 			color: $gray;
@@ -1267,6 +1377,7 @@ html {
 		font-weight: 500;
 		font-size: 19px;
 		cursor: pointer;
+		transition: background-color .3s ease, color .3s ease, box-shadow .3s ease;
 
 		html.theme-1 & {
 			background-color: #FF90B5;
@@ -1311,6 +1422,7 @@ html {
 		font-size: 28.4px;
 		text-align: center;
 		letter-spacing: -0.2px;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-3 &, html.theme-5 & {
 			color: $dark-gray;
@@ -1331,6 +1443,7 @@ html {
 		margin: 23px auto 0;
 		border: 0;
 		border-radius: 3px;
+		transition: background-color .3s ease;
 
 		html.theme-1 &, html.theme-2 &, html.theme-3 & {
 			background-color: $pink;
@@ -1376,25 +1489,37 @@ html {
 		padding: 11.5px 15px;
 		outline: 0;
 		background-color: transparent;
-		border: 1px solid #656565;
+		border-width: 1px;
+		border-style: solid;
 		border-radius: 8px;
 		font-family: 'Lato';
 		font-weight: 400;
 		font-size: 12px;
+		transition: color .3s ease, border-color .3s ease;
 
-		html.theme-1 &, html.theme-3 &, html.theme-5 & {
+		html.theme-1 & {
 			color: $gray;
+			border-color: #656565;
 		}
 
 		html.theme-2 & {
 			color: $white-desc;
+			border-color: #D5D5D5;
+		}
+
+		html.theme-3 &, html.theme-5 & {
+			color: $gray;
+			border-color: #D5D5D5;
 		}
 
 		html.theme-4 & {
 			color: $white;
+			border-color: #D5D5D5;
 		}
 
 		&::placeholder {
+			transition: color .3s ease;
+
 			html.theme-1 &, html.theme-3 &, html.theme-5 & {
 				color: $gray;
 			}
@@ -1419,6 +1544,7 @@ html {
 			font-family: 'Lato';
 			font-weight: 400;
 			font-size: 12.7px;
+			transition: color .3s ease;
 
 			html.theme-1 &, html.theme-3 &, html.theme-5 & {
 				color: $dark-gray;
@@ -1448,6 +1574,7 @@ html {
 		font-weight: 500;
 		font-size: 19px;
 		cursor: pointer;
+		transition: background-color .3s ease, color .3s ease, box-shadow .3s ease;
 
 		html.theme-1 & {
 			background-color: #FF90B5;
@@ -1478,6 +1605,7 @@ html {
 .footer {
 	width: 100%;
 	height: 340px;
+	transition: background-color .3s ease;
 
 	html.theme-1 & {
 		background-color: $pink;
@@ -1522,6 +1650,7 @@ html {
 		font-weight: 700;
 		font-size: 18px;
 		letter-spacing: .4px;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-4 & {
 			color: $white;
@@ -1552,6 +1681,7 @@ html {
 		text-decoration: none;
 		letter-spacing: .5px;
 		display: flex;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-4 & {
 			color: $white;
@@ -1586,6 +1716,7 @@ html {
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
+		transition: stroke .3s ease;
 		
 		html.theme-1 &, html.theme-4 & {
 			stroke: $white;
@@ -1618,6 +1749,7 @@ html {
 
 		&_link {
 			text-decoration: none;
+			transition: color .3s ease;
 
 			html.theme-1 &, html.theme-4 & {
 				color: $white;
@@ -1641,6 +1773,7 @@ html {
 		font-family: 'Lato';
 		font-weight: 400;
 		font-size: 10.9px;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-4 & {
 			color: $white;
@@ -1665,6 +1798,7 @@ html {
 		font-weight: 400;
 		font-size: 14px;
 		line-height: 25px;
+		transition: color .3s ease;
 
 		html.theme-1 &, html.theme-4 & {
 			color: $white;
