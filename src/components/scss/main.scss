@@ -1,5 +1,6 @@
 html {
 	background-color: $white;
+	transition: background-color .3s ease, color .3s ease;
 
 	&.theme-1 {
 		background-color: #FFEBF1;
@@ -30,6 +31,7 @@ html {
 	height: 80px;
 	box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.15);
 	z-index: 999;
+	transition: background-color .3s ease;
 
 	html.theme-1 & {
 		background-color: #FFFFFF88;
@@ -1288,6 +1290,396 @@ html {
 			background-color: $light-beige;
 			color: $dark-beige;
 			box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.3), 10px 10px 20px #8D8786;
+		}
+	}
+}
+
+.contact {
+	width: 100%;
+	height: 400px;
+
+	&__container {
+		width: 1000px;
+		height: 100%;
+		margin: 0 auto;
+	}
+
+	&__title {
+		margin: 0 auto;
+		font-family: 'Lato';
+		font-weight: 700;
+		font-size: 28.4px;
+		text-align: center;
+		letter-spacing: -0.2px;
+
+		html.theme-1 &, html.theme-3 &, html.theme-5 & {
+			color: $dark-gray;
+		}
+
+		html.theme-2 & {
+			color: $white-title;
+		}
+
+		html.theme-4 & {
+			color: $white;
+		}
+	}
+
+	&__line {
+		width: 55px;
+		height: 3px;
+		margin: 23px auto 0;
+		border: 0;
+		border-radius: 3px;
+
+		html.theme-1 &, html.theme-2 &, html.theme-3 & {
+			background-color: $pink;
+		}
+
+		html.theme-4 & {
+			background-color: #8435F2;
+		}
+
+		html.theme-5 & {
+			background-color: $dark-beige;
+		}
+	}
+
+	&__form {
+		height: 223px;
+		margin-top: 42px;
+		display: flex;
+		justify-content: space-between;
+
+		&_block {
+			position: relative;
+			flex-basis: 460px;
+		}
+	}
+
+	&__area {
+		height: 61px;
+		width: 100%;
+		margin-top: 24px;
+
+		&:first-child {
+			margin-top: 0px;
+		}
+
+		&.special {
+			height: 137px;
+		}
+	}
+
+	&__textbox {
+		width: 100%;
+		padding: 11.5px 15px;
+		outline: 0;
+		background-color: transparent;
+		border: 1px solid #656565;
+		border-radius: 8px;
+		font-family: 'Lato';
+		font-weight: 400;
+		font-size: 12px;
+
+		html.theme-1 &, html.theme-3 &, html.theme-5 & {
+			color: $gray;
+		}
+
+		html.theme-2 & {
+			color: $white-desc;
+		}
+
+		html.theme-4 & {
+			color: $white;
+		}
+
+		&::placeholder {
+			html.theme-1 &, html.theme-3 &, html.theme-5 & {
+				color: $gray;
+			}
+	
+			html.theme-2 & {
+				color: $white-desc;
+			}
+	
+			html.theme-4 & {
+				color: $white;
+			}
+		}
+
+		&.special {
+			height: 117px;
+			padding: 17.5px 15px;
+			resize: none;
+		}
+
+		&_title {
+			margin-bottom: 5px;
+			font-family: 'Lato';
+			font-weight: 400;
+			font-size: 12.7px;
+
+			html.theme-1 &, html.theme-3 &, html.theme-5 & {
+				color: $dark-gray;
+			}
+
+			html.theme-2 & {
+				color: $white-title;
+			}
+
+			html.theme-4 & {
+				color: $white;
+			}
+		}
+	}
+
+	&__btn {
+		position: absolute;
+		bottom: 1px;
+		right: 0;
+		width: 137px;
+		height: 45px;
+		margin-top: 23px;
+		border: 0;
+		outline: 0;
+		border-radius: 24px;
+		font-family: 'Lato';
+		font-weight: 500;
+		font-size: 19px;
+		cursor: pointer;
+
+		html.theme-1 & {
+			background-color: #FF90B5;
+			color: #2C2B2B;
+			box-shadow: 0px 10px 15px rgba(240, 58, 118, 0.18);
+		}
+
+		html.theme-2 &, html.theme-3 & {
+			background-color: $pink;
+			color: $white;
+			box-shadow: 0px 10px 15px rgba(240, 58, 118, 0.18);
+		}
+
+		html.theme-4 & {
+			background-color: $purple;
+			color: $white;
+			box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.3), 10px 10px 20px #3F3C89;
+		}
+
+		html.theme-5 & {
+			background-color: $light-beige;
+			color: $dark-beige;
+			box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.3), 10px 10px 20px #8D8786;
+		}
+	}
+}
+
+.footer {
+	width: 100%;
+	height: 340px;
+
+	html.theme-1 & {
+		background-color: $pink;
+	}
+
+	html.theme-2 & {
+		background-color: $black;
+	}
+
+	html.theme-3 & {
+		background-color: #FDE8EF;
+	}
+
+	html.theme-4 & {
+		background-color: $purple;
+	}
+
+	html.theme-5 & {
+		background-color: $beige;
+	}
+
+	&__container {
+		width: 1068px;
+		height: 100%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__area {
+		margin-top: 81px;
+
+		&_desc {
+			margin-top: 0px;
+			flex-basis: 403px;
+			align-self: center;
+		}
+	}
+
+	&__title {
+		font-family: 'Lato';
+		font-weight: 700;
+		font-size: 18px;
+		letter-spacing: .4px;
+
+		html.theme-1 &, html.theme-4 & {
+			color: $white;
+		}
+
+		html.theme-2 & {
+			color: $white-title;
+		}
+
+		html.theme-3 & {
+			color: $dark-gray;
+		}
+
+		html.theme-5 & {
+			color: $dark-beige;
+		}
+	}
+
+	&__links {
+		margin-top: 40px;
+	}
+
+	&__link {
+		margin-top: 18px;
+		font-family: 'Lato';
+		font-weight: 400;
+		font-size: 13px;
+		text-decoration: none;
+		letter-spacing: .5px;
+		display: flex;
+
+		html.theme-1 &, html.theme-4 & {
+			color: $white;
+		}
+
+		html.theme-2 & {
+			color: $white-desc;
+		}
+
+		html.theme-3 & {
+			color: $dark-gray;
+		}
+
+		html.theme-5 & {
+			color: $gray;
+		}
+
+		&:first-child {
+			margin-top: 0px;
+		}
+	}
+
+	&__wrap {
+		width: 14px;
+		height: 8px;
+		margin-right: 10px;
+		margin-top: 2px;
+		display: flex;
+	}
+
+	&__arrows {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		
+		html.theme-1 &, html.theme-4 & {
+			stroke: $white;
+		}
+
+		html.theme-2 & {
+			stroke: $white-desc;
+		}
+
+		html.theme-3 & {
+			stroke: $dark-gray;
+		}
+
+		html.theme-5 & {
+			stroke: $gray;
+		}
+	}
+
+	&__name {
+		display: flex;
+		align-items: center;
+	}
+
+	&__logo {
+		margin-right: 23px;
+		font-family: 'Lato';
+		font-weight: 900;
+		font-size: 23.4px;
+		text-transform: uppercase;
+
+		&_link {
+			text-decoration: none;
+
+			html.theme-1 &, html.theme-4 & {
+				color: $white;
+			}
+	
+			html.theme-2 & {
+				color: $white-title;
+			}
+	
+			html.theme-3 & {
+				color: $dark-gray;
+			}
+	
+			html.theme-5 & {
+				color: $dark-beige;
+			}
+		}
+	}
+
+	&__copyright {
+		font-family: 'Lato';
+		font-weight: 400;
+		font-size: 10.9px;
+
+		html.theme-1 &, html.theme-4 & {
+			color: $white;
+		}
+
+		html.theme-2 & {
+			color: $white-desc;
+		}
+
+		html.theme-3 & {
+			color: $dark-gray;
+		}
+
+		html.theme-5 & {
+			color: $dark-beige;
+		}
+	}
+
+	&__desc {
+		margin-top: 46px;
+		font-family: 'Lato', 'Roboto';
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 25px;
+
+		html.theme-1 &, html.theme-4 & {
+			color: $white;
+		}
+
+		html.theme-2 & {
+			color: $white-desc;
+		}
+
+		html.theme-3 & {
+			color: $dark-gray;
+		}
+
+		html.theme-5 & {
+			color: $gray;
 		}
 	}
 }
